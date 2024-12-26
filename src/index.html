@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>創意設計工作室</title>
+    
+    <!-- 樣式 -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- 預加載資源 -->
+    <link rel="preload" as="image" href="assets/logo.svg">
+    <link rel="preload" as="image" href="assets/brand-logo.svg">
+    <link rel="preload" as="image" href="assets/events-logo.svg">
+    <link rel="preload" as="image" href="assets/product-logo.svg">
+    
+    <!-- 字體 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 導航欄 -->
+    <nav class="nav">
+        <img src="assets/logo.svg" alt="Logo" class="logo">
+        <div class="nav-links">
+            <a href="/portfolio" class="nav-link">作品集</a>
+            <a href="/about" class="nav-link">關於</a>
+        </div>
+    </nav>
+
+    <!-- 主要內容區域 -->
+    <main class="main-content">
+        <!-- 3D 場景容器 -->
+        <div class="scene-container">
+            <div class="neon-effect"></div>
+            <canvas id="three-canvas"></canvas>
+        </div>
+
+        <!-- 服務類型 -->
+        <div class="service-types">
+            <div class="service-type" data-type="brand">
+                <img src="assets/brand-logo.svg" alt="Brand" class="service-logo">
+                <div class="service-title">品牌設計項目</div>
+                <div class="service-subtitle">Brand design project</div>
+            </div>
+
+            <div class="service-type" data-type="events">
+                <img src="assets/events-logo.svg" alt="Events" class="service-logo">
+                <div class="service-title">活動營銷設計項目</div>
+                <div class="service-subtitle">Event marketing design project</div>
+            </div>
+
+            <div class="service-type" data-type="product">
+                <img src="assets/product-logo.svg" alt="Product" class="service-logo">
+                <div class="service-title">品牌周邊開發項目</div>
+                <div class="service-subtitle">Brand Product Development Project</div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <script src="js/scene.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 

@@ -1,0 +1,164 @@
+/* 作品集瀑布流樣式 */
+.portfolio-container {
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 120px 60px;
+    column-count: 3;
+    column-gap: 40px;
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+}
+
+.portfolio-item {
+    break-inside: avoid;
+    margin-bottom: 40px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 4px;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: calc(var(--item-index, 0) * 0.1s);
+}
+
+.portfolio-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.portfolio-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: brightness(1);
+}
+
+.portfolio-item:hover .portfolio-image {
+    filter: brightness(0.7);
+    transform: scale(1.03);
+}
+
+.portfolio-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px;
+    background: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.2), transparent);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(10px);
+}
+
+.portfolio-item:hover .portfolio-info {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.portfolio-title {
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: #ffffff;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    transform: translateY(10px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-description {
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.8);
+    letter-spacing: 0.5px;
+    transform: translateY(10px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0.05s;
+}
+
+.portfolio-item:hover .portfolio-title,
+.portfolio-item:hover .portfolio-description {
+    transform: translateY(0);
+}
+
+/* 動畫效果 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 響應式設計 */
+@media (max-width: 1600px) {
+    .portfolio-container {
+        padding: 100px 40px;
+        column-gap: 30px;
+    }
+    
+    .portfolio-item {
+        margin-bottom: 30px;
+    }
+    
+    .portfolio-info {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .portfolio-container {
+        column-count: 2;
+        padding: 80px 30px;
+    }
+    
+    .portfolio-title {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-container {
+        column-count: 1;
+        padding: 60px 20px;
+    }
+    
+    .portfolio-item {
+        margin-bottom: 25px;
+    }
+    
+    .portfolio-info {
+        padding: 25px;
+        opacity: 1;
+        transform: none;
+        background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.2), transparent);
+    }
+    
+    .portfolio-title {
+        font-size: 1.1rem;
+        transform: none;
+    }
+    
+    .portfolio-description {
+        transform: none;
+    }
+    
+    .portfolio-item:hover {
+        transform: translateY(-4px);
+    }
+} 

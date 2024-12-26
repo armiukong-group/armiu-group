@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>產品設計作品 - ArMiu Group</title>
+    
+    <!-- 字體 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- 樣式 -->
+    <link rel="stylesheet" href="src/css/portfolio.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            min-height: 100vh;
+        }
+
+        /* 導航欄樣式 */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            height: 55px;
+            width: auto;
+            transition: filter 0.3s ease;
+            filter: brightness(1.2);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #00E5FF;
+        }
+
+        /* 頁面標題 */
+        .page-title {
+            padding: 120px 40px 0;
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 100;
+            letter-spacing: 2px;
+        }
+
+        .page-subtitle {
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            opacity: 0.7;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .nav {
+                padding: 1rem 2rem;
+            }
+
+            .logo {
+                height: 40px;
+            }
+
+            .page-title {
+                font-size: 2rem;
+                padding: 100px 20px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 導航欄 -->
+    <nav class="nav">
+        <a href="preview.html">
+            <img src="src/assets/logo.svg" alt="Logo" class="logo">
+        </a>
+        <div class="nav-links">
+            <a href="preview.html#works" class="nav-link">作品</a>
+            <a href="preview.html#about" class="nav-link">關於</a>
+            <a href="preview.html#contact" class="nav-link">聯繫</a>
+        </div>
+    </nav>
+
+    <!-- 頁面標題 -->
+    <h1 class="page-title">產品設計作品</h1>
+    <p class="page-subtitle">Product Design Portfolio</p>
+
+    <!-- 作品展示區 -->
+    <div class="portfolio-container">
+        <div class="portfolio-item" style="--item-index: 0;">
+            <img src="src/assets/portfolio/product/1.jpg" alt="產品設計" class="portfolio-image">
+            <div class="portfolio-info">
+                <h3 class="portfolio-title">產品包裝設計</h3>
+                <p class="portfolio-description">創新產品外觀設計</p>
+            </div>
+        </div>
+        <div class="portfolio-item" style="--item-index: 1;">
+            <img src="src/assets/portfolio/product/2.jpg" alt="產品設計" class="portfolio-image">
+            <div class="portfolio-info">
+                <h3 class="portfolio-title">電子產品設計</h3>
+                <p class="portfolio-description">智能產品外觀設計</p>
+            </div>
+        </div>
+        <div class="portfolio-item" style="--item-index: 2;">
+            <img src="src/assets/portfolio/product/3.jpg" alt="產品設計" class="portfolio-image">
+            <div class="portfolio-info">
+                <h3 class="portfolio-title">生活用品設計</h3>
+                <p class="portfolio-description">日常用品創新設計</p>
+            </div>
+        </div>
+        <div class="portfolio-item" style="--item-index: 3;">
+            <img src="src/assets/portfolio/product/4.jpg" alt="產品設計" class="portfolio-image">
+            <div class="portfolio-info">
+                <h3 class="portfolio-title">傢具產品設計</h3>
+                <p class="portfolio-description">現代傢具創新設計</p>
+            </div>
+        </div>
+        <div class="portfolio-item" style="--item-index: 4;">
+            <img src="src/assets/portfolio/product/5.jpg" alt="產品設計" class="portfolio-image">
+            <div class="portfolio-info">
+                <h3 class="portfolio-title">禮品產品設計</h3>
+                <p class="portfolio-description">精品禮品創意設計</p>
+            </div>
+        </div>
+        <div class="portfolio-item" style="--item-index: 5;">
+            <img src="src/assets/portfolio/product/6.jpg" alt="產品設計" class="portfolio-image">
+            <div class="portfolio-info">
+                <h3 class="portfolio-title">文創產品設計</h3>
+                <p class="portfolio-description">文化創意產品設計</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 添加滾動效果
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(0,0,0,0.8)';
+            } else {
+                nav.style.background = 'transparent';
+            }
+        });
+    </script>
+</body>
+</html> 
